@@ -14,7 +14,7 @@
 		<div class="items">
 			<NavLink href="/">{$t('nav.home')}</NavLink>
 			<NavLink href="/about">{$t('nav.about')}</NavLink>
-			<NavLink href="/farms">{$t('nav.farms')}</NavLink>
+			<NavLink href="/farm">{$t('nav.farms')}</NavLink>
 			<NavLink href="/livestock">{$t('nav.livestock')}</NavLink>
 			<NavLink href="/contact">{$t('nav.contact')}</NavLink>
 		</div>

@@ -17,7 +17,7 @@
 		<div class="left-side" in:fade={{ delay: 500 }} out:fade={{ duration: 400 }}>
 			<NavLink on:click={clickNavbar} large href="/">{$t('nav.home')}</NavLink>
 			<NavLink on:click={clickNavbar} large href="/about">{$t('nav.about')}</NavLink>
-			<NavLink on:click={clickNavbar} large href="/farms">{$t('nav.farms')}</NavLink>
+			<NavLink on:click={clickNavbar} large href="/farm">{$t('nav.farms')}</NavLink>
 			<NavLink on:click={clickNavbar} large href="/livestock">{$t('nav.livestock')}</NavLink>
 			<NavLink on:click={clickNavbar} large href="/contact">{$t('nav.contact')}</NavLink>
 

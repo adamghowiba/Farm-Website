@@ -12,13 +12,13 @@
 		<div class="side" style="background-color: {color}">
 			<h3>{title}</h3>
 			<slot />
-			<Button href="/farms">Learn More</Button>
+			<Button href="/farm">Learn More</Button>
 		</div>
 	{/if}
 	<div class="cta">
 		{#if !split}
 			<h2>{title}</h2>
-			<Button href="/farms">Learn More</Button>
+			<Button href="/farm">Learn More</Button>
 		{/if}
 		<img {src} alt="Background of cows" />
 	</div>

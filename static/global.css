@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Reseet */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#svelte {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: var(--color-gray);
+	font-family: 'Montserrat', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Global Classes */
+.container {
+	position: relative;
+	max-width: 1140px;
+	margin: 0 auto;
+}
+.spaced {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+
+/* Global styles */
+h1 {
+	font-weight: var(--fw-bolder);
+	font-size: var(--text-h1);
+	line-height: 115%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+h2 {
+	font-size: var(--text-h2);
+	font-weight: var(--fw-bold);
+	line-height: 1.3;
+}
+h3 {
+	font-size: var(--text-h3);
+	font-weight: var(--fw-bold);
+}
+p {
+	font-size: var(--text-body);
+	color: var(--color-text);
+	line-height: 1.7;
+}
+.subtitle {
+	font-weight: var(--fw-bolder);
+	font-size: var(--text-body);
+	color: var(--color-red);
+	text-transform: uppercase;
+}
+.subtitle--light {
+	font-weight: var(--fw-light);
+	color: car(--color-light-gray);
+}
+.overlay {
+	position: absolute;
+	z-index: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.418);
+}
+
+:root {
+	--color-gray: #f7fbfa;
+	--color-light-gray: #6d6d6d;
+	--color-text: #686868;
+	--color-black: #3a3a3a;
+	--color-red: #d9273f;
+	--color-white: #fffdfb;
+	--color-overlay: rgba(0, 0, 0, 0.418);
+
+	--text-body: 1.1875rem; /* 20px */
+	--text-sm: 1.125rem; /* 18px */
+	--text-xs: 0.9375rem; /* 15px */
+	--text-xxs: 0.75rem; /* 12px */
+
+	--text-h1-lg: 80px;
+	--text-h1: 3.125rem; /* 50px */
+	--text-h2: 2.1875rem; /* 35px */
+	--text-h3: 1.875rem; /* 30px */
+
+	--fw-light: 300;
+	--fw-normal: 400;
+	--fw-md: 500;
+	--fw-bold: 600;
+	--fw-bolder: 700;
+
+	--pd-xl: 6rem;
+	--pd-lg: 4rem;
+	--pd-md: 3rem;
+	--pd-sm: 2rem;
+	--pd-xs: 1.2rem;
+}
+
+/* Laptop LG */
+@media screen and (max-width: 1240px) {
+	.container,
+	.navbar {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}
+
+/* Tablet */
+@media screen and (max-width: 750px) {
+	h1 {
+		font-size: 45px;
+	}
+	h2 {
+		font-size: 35px;
+	}
+}
+
+/* Mobile Large */
+@media screen and (max-width: 425px) {
+	.container,
+	.navbar {
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	p {
+		font-size: 16px;
+	}
+	.subtitle {
+		font-size: 16px;
+	}
+	h1 {
+		font-size: 40px;
+	}
+	h2 {
+		font-size: 30px;
+	}
+}

@@ -15,7 +15,8 @@
 		<p>
 			{desc}
 		</p>
-		<a href="/livestock/{urlSafeName}">Learn More</a>
+		<!-- TODO FIX -->
+		<!-- <a href="/livestock/{urlSafeName}">Learn More</a> -->
 	</div>
 </div>
 
