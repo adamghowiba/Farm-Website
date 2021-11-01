@@ -1,0 +1,107 @@
+<script>
+	import { t } from '$lib/translate';
+	import { fly } from 'svelte/transition';
+	import Hamburger from './Hamburger.svelte';
+	import NavLink from './NavLink.svelte';
+
+	export let open;
+</script>
+
+<div class="container">
+	<div class="navbar">
+		<img src="/images/logo.png" alt="Logo of red bull" />
+
+		<div class="items">
+			<NavLink href="/">{$t('nav.home')}</NavLink>
+			<NavLink href="/about">{$t('nav.about')}</NavLink>
+			<NavLink href="/farms">{$t('nav.farms')}</NavLink>
+			<NavLink href="/livestock">{$t('nav.livestock')}</NavLink>
+			<NavLink href="/contact">{$t('nav.contact')}</NavLink>
+		</div>
+		<div class:hide={open} class="contact-info">
+			<div class="email">
+				<img src="/icons/email--red.svg" alt="Red email icon" />
+				{$t('contact.email')}
+			</div>
+			<div class="phone">
+				<img src="/icons/phone--red.svg" alt="Red email icon" />
+				{$t('contact.phone')}
+			</div>
+		</div>
+
+		<div class="hamburger">
+			<Hamburger {open} on:openNavbar />
+		</div>
+	</div>
+</div>
+
+<style>
+	.navbar {
+		display: flex;
+		position: absolute;
+		align-items: center;
+		right: 0;
+		left: 0;
+		z-index: 1000;
+	}
+	.items {
+		display: flex;
+		flex-grow: 1;
+		/* gap: 2rem; */
+		justify-content: space-between;
+		width: 100%;
+		margin-left: 40px;
+		text-transform: capitalize;
+	}
+
+	.contact-info {
+		display: flex;
+		width: 100%;
+		justify-content: flex-end;
+		align-items: center;
+		gap: 2rem;
+
+		transition: opacity 0.25s linear;
+	}
+	.email,
+	.phone {
+		display: flex;
+		align-items: center;
+	}
+	.email img,
+	.phone img {
+		margin-right: 10px;
+	}
+	.hamburger {
+		position: relative;
+		display: none;
+		z-index: 3000;
+	}
+	.hide {
+		opacity: 0;
+	}
+
+	/* Phone Large */
+	@media screen and (max-width: 550px) {
+		.contact-info {
+			display: none;
+		}
+		.hamburger {
+			margin-left: auto;
+		}
+	}
+
+	/* Small Laptop */
+	@media screen and (max-width: 1000px) {
+		.contact-info {
+			color: white;
+		}
+		.hamburger {
+			display: block;
+			justify-content: flex-end;
+		}
+		.items {
+			display: none;
+		}
+	}
+</style>
