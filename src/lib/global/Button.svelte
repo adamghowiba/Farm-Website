@@ -4,12 +4,13 @@
 	export let href = '/';
 	export let icon = false;
 	export let type: ButtonType = 'button';
+	export let mgTop = 'unset';
 </script>
 
 {#if type != 'button'}
 	<button type={type ?? type}> <slot /></button>
 {:else}
-	<a {href}>
+	<a style="margin-top: {mgTop}" {href}>
 		<slot />
 		{#if icon}
 			<img src="/icons/Arrow.svg" alt="Arrow Icon" />

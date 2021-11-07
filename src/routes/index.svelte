@@ -6,7 +6,7 @@
 	import Hero from '$lib/home/Hero.svelte';
 	import About from '$lib/home/About.svelte';
 	import ImageCard from '$lib/ImageCard.svelte';
-	import Breed from '$lib/home/Breeds.svelte';
+	import Breed from '$lib/home/BreedsSection.svelte';
 	import CTA from '$lib/global/CTA.svelte';
 	import Stats from '$lib/home/Stats.svelte';
 	import ContactSection from '$lib/home/ContactSection.svelte';

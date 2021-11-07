@@ -107,7 +107,7 @@
 
 	@media screen and (max-width: 750px) {
 		.images {
-			height: 350px;
+			height: 400px;
 		}
 		.second-img {
 			left: 0rem;

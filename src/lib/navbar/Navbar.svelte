@@ -95,6 +95,7 @@
 	@media screen and (max-width: 1000px) {
 		.contact-info {
 			color: white;
+			gap: 1rem;
 		}
 		.hamburger {
 			display: block;

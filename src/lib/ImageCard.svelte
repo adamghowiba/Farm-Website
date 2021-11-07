@@ -2,7 +2,7 @@
 	export let name: String;
 	export let desc;
 
-	let urlSafeName = name.trim().replace(' ', '_').toLowerCase();
+	let urlSafeName = name.trim().replace(' ', '-').toLowerCase();
 </script>
 
 <div class="card">
@@ -15,8 +15,8 @@
 		<p>
 			{desc}
 		</p>
-		<!-- TODO FIX -->
-		<!-- <a href="/livestock/{urlSafeName}">Learn More</a> -->
+
+		<a href="/livestock/{urlSafeName}">Learn More</a>
 	</div>
 </div>
 
