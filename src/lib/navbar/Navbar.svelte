@@ -6,7 +6,7 @@
 	import { fly } from 'svelte/transition';
 	import Hamburger from './Hamburger.svelte';
 	import NavLink from './NavLink.svelte';
-	let background;
+	let background = 'master';
 
 	export let open;
 </script>
