@@ -4,6 +4,7 @@
 	export let href = '/';
 	export let large = false;
 	$: isActive = $page.path === href.toLowerCase();
+
 </script>
 
 <a on:click class:large {href} class:active={isActive}><slot /></a>

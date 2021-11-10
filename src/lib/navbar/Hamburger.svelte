@@ -50,6 +50,7 @@
 		stroke-linejoin: round;
 		stroke-miterlimit: 1.5;
 		cursor: pointer;
+		width: 100%;
 	}
 	#top,
 	#bottom {
@@ -59,7 +60,7 @@
 
 	svg.active #top,
 	svg.active #bottom {
-		stroke-dasharray: 75.39;
+		/* stroke-dasharray: 75.39; */
 		stroke-dashoffset: -60;
 	}
 

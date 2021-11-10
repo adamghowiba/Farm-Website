@@ -1,12 +1,46 @@
-<script>
+<script lang="ts">
+	import AboutHeader from '$lib/about/AboutHeader.svelte';
+	import AboutHistory from '$lib/about/AboutHistory.svelte';
+	import Button from '$lib/global/Button.svelte';
 	import Cta from '$lib/global/CTA.svelte';
 	import FooterCta from '$lib/global/FooterCTA.svelte';
 	import PageHeader from '$lib/global/PageHeader.svelte';
+
+	type Selectors = 'history' | 'mission' | 'team';
+	let selected: Selectors = 'history';
+	
+	const handleSelected = (selector: Selectors) => {
+		selected = selector;
+	};
+
 </script>
 
 <PageHeader --src="url(/images/white-cow.jpg)" --blue="green" />
 
-<div class="container grid spaced">
+<section class="container spaced--lg">
+	<AboutHeader subtitle="Our" title="{selected}" />
+
+	<div class="grid spaced--lg">
+		<div class="content">
+			<AboutHistory {selected} />
+		</div>
+
+		<div class="selector">
+			<h2>About Us</h2>
+			<Button active={selected == 'history'} on:click={() => handleSelected('history')}
+				>Our history</Button
+			>
+			<Button active={selected == 'mission'} on:click={() => handleSelected('mission')}
+				>Our mission</Button
+			>
+			<Button active={selected == 'team'} on:click={() => handleSelected('team')}
+				>Meet the team</Button
+			>
+		</div>
+	</div>
+</section>
+
+<!-- <div class="container grid spaced--lg">
 	<img src="/images/cow_eating.png" alt="" />
 	<div class="heading">
 		<div class="subtitle">Our mission</div>
@@ -17,12 +51,14 @@
 			meats products
 		</p>
 	</div>
-</div>
+</div> -->
 
-<Cta split title="See our process" src="/images/cow_side.jpg"
-	>Fayrooz offers a wide range of different beef cattle breeds. Naturally raised in Egypt. Enjoyed
-	by people all around the world.</Cta
->
+<Cta
+	title="See our process"
+	src="/images/cow_side.jpg"
+	body="Fayrooz offers a wide range of different beef cattle breeds. Naturally raised in Egypt. Enjoyed
+by people all around the world."
+/>
 
 <section>
 	<FooterCta />
@@ -30,19 +66,27 @@
 
 <style>
 	.grid {
-		display: grid;
-		grid-template-columns: 1.3fr 1fr;
-		align-items: center;
+		/* display: grid;
+		grid-template-columns: 1.3fr 1fr; */
+		display: flex;
+		width: 100%;
 		gap: var(--pd-lg);
 	}
-	.heading {
+	.selector {
 		display: flex;
 		flex-direction: column;
-		gap: 0.7rem;
+		gap: 1.5rem;
 	}
-	img {
+	.content {
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
+	}
+	h2 {
+		display: inline-block;
+	}
+
+	@media only screen and (max-width: 1000px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
 	}
 </style>

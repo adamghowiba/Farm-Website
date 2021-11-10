@@ -1,13 +1,17 @@
 <script>
+	import { page } from '$app/stores';
+
 	import { t } from '$lib/translate';
+	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import Hamburger from './Hamburger.svelte';
 	import NavLink from './NavLink.svelte';
+	let background;
 
 	export let open;
 </script>
 
-<div class="container">
+<div class="container" class:background>
 	<div class="navbar">
 		<img src="/images/logo.png" alt="Logo of red bull" />
 
@@ -38,11 +42,22 @@
 <style>
 	.navbar {
 		display: flex;
-		position: absolute;
+		position: fixed;
+		max-width: 1140px;
+		margin: 0 auto;
 		align-items: center;
 		right: 0;
 		left: 0;
 		z-index: 1000;
+		/* top: 50%;
+		transform: translateY(-50%); */
+	}
+	.background {
+		background-color: var(--color-gray);
+		height: 100px;
+	}
+	.container {
+		/* height: 100px; */
 	}
 	.items {
 		display: flex;
@@ -96,6 +111,9 @@
 		.contact-info {
 			color: white;
 			gap: 1rem;
+		}
+		.container {
+			background-color: transparent;
 		}
 		.hamburger {
 			display: block;

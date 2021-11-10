@@ -44,6 +44,10 @@ a {
 	padding-top: 3rem;
 	padding-bottom: 3rem;
 }
+.spaced--lg {
+	margin-top: 6rem;
+	margin-bottom: 6rem;
+}
 
 /* Global styles */
 h1 {

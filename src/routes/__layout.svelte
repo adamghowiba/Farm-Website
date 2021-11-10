@@ -1,10 +1,13 @@
 <script>
+import { page } from '$app/stores';
+
 	import Footer from '$lib/global/Footer.svelte';
 	import MobileNavbar from '$lib/navbar/MobileNavbar.svelte';
 	import Navbar from '$lib/navbar/Navbar.svelte';
 	import { onMount } from 'svelte';
 
 	let open = false;
+	// $: homePage = $page.path !== '/';
 
 	const handleScrollOut = () => {
 		open = false;
@@ -15,10 +18,12 @@
 		open = !open;
 		document.addEventListener('scroll', handleScrollOut);
 	};
+
+
 </script>
 
 <MobileNavbar bind:open />
-<Navbar {open} on:openNavbar={openMobileNavbar} />
+<Navbar  {open} on:openNavbar={openMobileNavbar} />
 <slot />
 <Footer />
 

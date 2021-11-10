@@ -18,7 +18,7 @@ import Button from "./Button.svelte";
     flex-direction: column;
     gap: 1rem;
     align-items: center;
-    height: 500px;
+    padding: 15rem 0;
     position: relative;
 }
 img {

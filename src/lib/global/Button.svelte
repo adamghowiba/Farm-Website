@@ -5,10 +5,11 @@
 	export let icon = false;
 	export let type: ButtonType = 'button';
 	export let mgTop = 'unset';
+	export let active = false;
 </script>
 
-{#if type != 'button'}
-	<button type={type ?? type}> <slot /></button>
+{#if href === '/'}
+	<button on:click {type} class:inactive={!active}> <slot /></button>
 {:else}
 	<a style="margin-top: {mgTop}" {href}>
 		<slot />
@@ -36,6 +37,8 @@
 		box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 		padding: 18px 40px;
 		min-width: 228px;
+
+		transition: opacity 0.25s linear;
 	}
 	button {
 		appearance: none;
@@ -44,5 +47,8 @@
 	}
 	img {
 		margin-left: 20px;
+	}
+	.inactive {
+		opacity: 0.5;
 	}
 </style>
