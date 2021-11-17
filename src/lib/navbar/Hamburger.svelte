@@ -1,17 +1,21 @@
 <script lang="ts">
+	import { mobileNavOpen } from '$lib/stores';
+
 	import { createEventDispatcher } from 'svelte';
 
-	const dispatch = createEventDispatcher();
-	export let open;
+	// const dispatch = createEventDispatcher();
+	// export let open;
+	export let relative;
 
 	const handleNavbarOpen = () => {
-		open = !open && true;
-		dispatch('openNavbar', true);
+		$mobileNavOpen = !$mobileNavOpen;
+		// open = !open && true;
+		// dispatch('openNavbar', true);
 	};
 </script>
 
-<div class="hamburger" on:click={handleNavbarOpen} class:open>
-	<svg class:active={open} viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg">
+<div class="hamburger" on:click={handleNavbarOpen} class:open={$mobileNavOpen} class:relative>
+	<svg class:active={$mobileNavOpen} viewBox="0 0 32 42" xmlns="http://www.w3.org/2000/svg">
 		<g transform="matrix(1,0,0,1,-389.5,-264.004)">
 			<g id="arrow_left2">
 				<g transform="matrix(1,0,0,1,0,5)">
@@ -68,11 +72,13 @@
 		transform: rotate(0deg);
 		transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 	}
-
 	svg path {
 		fill: none;
 		stroke: white;
 		stroke-width: 2px;
+	}
+	.relative svg path {
+		stroke: var(--color-black);
 	}
 
 	@media screen and (max-width: 1000px) {

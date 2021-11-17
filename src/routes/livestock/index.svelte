@@ -2,12 +2,14 @@
 	import FooterCta from '$lib/global/FooterCTA.svelte';
 	import PageHeader from '$lib/global/PageHeader.svelte';
 	import ImageCard from '$lib/ImageCard.svelte';
+	import Navbar from '$lib/navbar/Navbar.svelte';
 
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	};
 </script>
 
+<Navbar  />
 <PageHeader --src="url(/images/white-cow.jpg)" --blue="green" />
 <div class="container spaced">
 	<div class="page-desc">
@@ -34,7 +36,7 @@
 	</div>
 </div>
 <section>
-    <FooterCta />
+	<FooterCta />
 </section>
 
 <style>
@@ -44,9 +46,9 @@
 		gap: 2rem;
 		align-items: center;
 	}
-    section {
-        position: relative;
-    }
+	section {
+		position: relative;
+	}
 	.half-circle {
 		display: flex;
 		justify-content: center;

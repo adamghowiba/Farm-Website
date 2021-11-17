@@ -19,6 +19,7 @@
 
 <script lang="ts">
 	import Button from '$lib/global/Button.svelte';
+	import Navbar from '$lib/navbar/Navbar.svelte';
 
 	export let id;
 	export let breedData: Breed;
@@ -26,9 +27,8 @@
 	const benfits = breedData.benefits.join(', ');
 </script>
 
-<div>a</div>
 <!-- <div class="container"> -->
-
+<Navbar />
 <div class="wrap container">
 	<div class="images">
 		<img class="images__third" src="/images/hero_cow.jpg" alt="Third" />

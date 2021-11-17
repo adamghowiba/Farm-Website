@@ -1,18 +1,18 @@
 <script>
 	import { page } from '$app/stores';
+import { mobileNavOpen } from '$lib/stores';
 
 	import { t } from '$lib/translate';
 	import { onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import Hamburger from './Hamburger.svelte';
 	import NavLink from './NavLink.svelte';
-	let background = 'master';
 
-	export let open;
+	export let relative = true;
 </script>
 
-<div class="container" class:background>
-	<div class="navbar">
+<!-- <div class="container"> -->
+	<div class="navbar" class:relative>
 		<img src="/images/logo.png" alt="Logo of red bull" />
 
 		<div class="items">
@@ -22,7 +22,7 @@
 			<NavLink href="/livestock">{$t('nav.livestock')}</NavLink>
 			<NavLink href="/contact">{$t('nav.contact')}</NavLink>
 		</div>
-		<div class:hide={open} class="contact-info">
+		<div class:hide={$mobileNavOpen} class="contact-info">
 			<div class="email">
 				<img src="/icons/email--red.svg" alt="Red email icon" />
 				{$t('contact.email')}
@@ -34,15 +34,15 @@
 		</div>
 
 		<div class="hamburger">
-			<Hamburger {open} on:openNavbar />
+			<Hamburger {relative} />
 		</div>
 	</div>
-</div>
+<!-- </div> -->
 
 <style>
 	.navbar {
 		display: flex;
-		position: fixed;
+		position: absolute;
 		max-width: 1140px;
 		margin: 0 auto;
 		align-items: center;
@@ -52,10 +52,13 @@
 		/* top: 50%;
 		transform: translateY(-50%); */
 	}
-	.background {
+	.relative {
+		position: relative;
+	}
+	/* .background {
 		background-color: var(--color-gray);
 		height: 100px;
-	}
+	} */
 	.container {
 		/* height: 100px; */
 	}
@@ -108,8 +111,12 @@
 
 	/* Small Laptop */
 	@media screen and (max-width: 1000px) {
-		.contact-info {
+		 .contact-info {
 			color: white;
+			gap: 1rem;
+		}
+		.relative .contact-info {
+			color: var(--color-black);
 			gap: 1rem;
 		}
 		.container {

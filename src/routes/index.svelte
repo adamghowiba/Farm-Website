@@ -10,6 +10,7 @@
 	import CTA from '$lib/global/CTA.svelte';
 	import Stats from '$lib/home/Stats.svelte';
 	import ContactSection from '$lib/home/ContactSection.svelte';
+import Navbar from '$lib/navbar/Navbar.svelte';
 	onMount(() => {
 		document.body.dir = $locale == 'en' ? 'ltr' : 'rtl';
 	});
@@ -17,6 +18,8 @@
 	$locale = 'en';
 	$: dict.set(translations);
 </script>
+
+<Navbar relative={false} />
 
 <Hero />
 <About />

@@ -5,22 +5,23 @@
 	import Cta from '$lib/global/CTA.svelte';
 	import FooterCta from '$lib/global/FooterCTA.svelte';
 	import PageHeader from '$lib/global/PageHeader.svelte';
+	import Navbar from '$lib/navbar/Navbar.svelte';
 
 	type Selectors = 'history' | 'mission' | 'team';
 	let selected: Selectors = 'history';
-	
+
 	const handleSelected = (selector: Selectors) => {
 		selected = selector;
 	};
-
 </script>
 
-<PageHeader --src="url(/images/white-cow.jpg)" --blue="green" />
+<Navbar />
+<PageHeader --src="url(/images/white-cow.jpg)" />
 
-<section class="container spaced--lg">
-	<AboutHeader subtitle="Our" title="{selected}" />
+<section class="container spaced">
+	<AboutHeader subtitle="Our" title={selected} />
 
-	<div class="grid spaced--lg">
+	<div class="grid spaced">
 		<div class="content">
 			<AboutHistory {selected} />
 		</div>
@@ -70,7 +71,7 @@ by people all around the world."
 		grid-template-columns: 1.3fr 1fr; */
 		display: flex;
 		width: 100%;
-		gap: var(--pd-lg);
+		gap: var(--pd-xl);
 	}
 	.selector {
 		display: flex;
@@ -86,7 +87,11 @@ by people all around the world."
 
 	@media only screen and (max-width: 1000px) {
 		.grid {
-			grid-template-columns: 1fr;
+			flex-direction: column-reverse;
+			align-items: center
+		}
+		.selector {
+			text-align: center;
 		}
 	}
 </style>

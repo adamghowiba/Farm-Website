@@ -25,6 +25,8 @@ img {
     position: absolute;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
 }
 h3 {
     text-align: center;

@@ -47,5 +47,11 @@
 	img {
 		object-fit: cover;
 		max-height: 400px;
+		max-width:100%;
+	}
+	.wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 </style>

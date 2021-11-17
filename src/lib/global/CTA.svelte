@@ -91,7 +91,6 @@
 		z-index: -1;
 		width: 100%;
 		height: 100%;
-		border: 1px solid gold;
 		left: 0;
 		right: 0;
 		top: 0;
