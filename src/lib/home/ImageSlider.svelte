@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { fly, slide } from 'svelte/transition';
+	import { prefetch } from '$app/navigation';
+import { fly, slide } from 'svelte/transition';
 	let images = [
 		'cow_eating.png',
 		'cows_in_field.png',
@@ -31,6 +32,7 @@
 		{#key currentIndex}
 			<img
 				transition:fly={{ x: -20 }}
+				rel="prefetch"
 				class="main-img"
 				src={`/images/${images[currentIndex]}`}
 				alt="Cows eating grass"

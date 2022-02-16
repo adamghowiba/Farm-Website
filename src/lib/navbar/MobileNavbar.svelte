@@ -1,25 +1,25 @@
 <script lang="ts">
 	import ContactInfo from '$lib/contact/ContactInfo.svelte';
+	import { mobileNavOpen } from '$lib/stores';
 	import { t } from '$lib/translate';
 	import { onMount } from 'svelte';
 	import { fade, fly } from 'svelte/transition';
 	import NavLink from './NavLink.svelte';
 
-	export let open;
-
 	function clickNavbar() {
-		open = false;
+		$mobileNavOpen = false;
 	}
+
 </script>
 
-<div class="nav" class:open class:delay={!open}>
-	{#if open}
+<div class="nav" class:open={$mobileNavOpen} class:delay={!mobileNavOpen}>
+	{#if $mobileNavOpen}
 		<div class="left-side" in:fade={{ delay: 500 }} out:fade={{ duration: 400 }}>
-			<NavLink on:click={clickNavbar} large href="/">{$t('nav.home')}</NavLink>
-			<NavLink on:click={clickNavbar} large href="/about">{$t('nav.about')}</NavLink>
-			<NavLink on:click={clickNavbar} large href="/farm">{$t('nav.farms')}</NavLink>
-			<NavLink on:click={clickNavbar} large href="/livestock">{$t('nav.livestock')}</NavLink>
-			<NavLink on:click={clickNavbar} large href="/contact">{$t('nav.contact')}</NavLink>
+			<NavLink large href="/">{$t('nav.home')}</NavLink>
+			<NavLink large href="/about">{$t('nav.about')}</NavLink>
+			<NavLink large href="/farm">{$t('nav.farms')}</NavLink>
+			<NavLink large href="/livestock">{$t('nav.livestock')}</NavLink>
+			<NavLink large href="/contact">{$t('nav.contact')}</NavLink>
 
 			<div class="social">
 				<ContactInfo icon="/icons/pin--white.svg" />

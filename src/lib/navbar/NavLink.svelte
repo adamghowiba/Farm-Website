@@ -1,13 +1,19 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { mobileNavOpen } from '$lib/stores';
 
 	export let href = '/';
 	export let large = false;
 	$: isActive = $page.path === href.toLowerCase();
 
+	function checkNavbarOpen() {
+		if ($mobileNavOpen) {
+			$mobileNavOpen = false;
+		}
+	}
 </script>
 
-<a on:click class:large {href} class:active={isActive}><slot /></a>
+<a on:click={checkNavbarOpen} class:large {href} class:active={isActive}><slot /></a>
 
 <style>
 	a {

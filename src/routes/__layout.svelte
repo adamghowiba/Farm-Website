@@ -1,33 +1,22 @@
 <script>
-import { page } from '$app/stores';
-
 	import Footer from '$lib/global/Footer.svelte';
 	import MobileNavbar from '$lib/navbar/MobileNavbar.svelte';
-	import Navbar from '$lib/navbar/Navbar.svelte';
-	import { onMount } from 'svelte';
+	import { mobileNavOpen } from '$lib/stores';
 
-	let open = false;
-	// $: homePage = $page.path !== '/';
+	function overScrollMobileNav() {
+		$mobileNavOpen = false;
+		document.removeEventListener('scroll', overScrollMobileNav);
+	}
 
-	const handleScrollOut = () => {
-		open = false;
-		document.removeEventListener('scroll', handleScrollOut);
-	};
-
-	const openMobileNavbar = () => {
-		open = !open;
-		document.addEventListener('scroll', handleScrollOut);
-	};
-
+	$: if ($mobileNavOpen) {
+		document.addEventListener('scroll', overScrollMobileNav)
+	} 
 
 </script>
 
-<MobileNavbar bind:open />
-<Navbar  {open} on:openNavbar={openMobileNavbar} />
+<MobileNavbar />
 <slot />
 <Footer />
 
 <style>
-	@media only screen and (max-width: 1000px) {
-	}
 </style>

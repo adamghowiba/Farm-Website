@@ -1,13 +1,16 @@
 <script lang="ts">
-	export let name: String;
-	export let desc;
+	import { parseBreedName } from './utils/stringUtils';
 
-	let urlSafeName = name.trim().replace(' ', '-').toLowerCase();
+	export let name: string;
+	export let desc;
+	export let src;
+
+	let urlSafeName = parseBreedName(name);
 </script>
 
 <div class="card">
 	<div class="head">
-		<img src="/images/breeds/aberdeen-angus.webp" alt="Cattle breed aberdeen angus" />
+		<img {src} alt="Cattle breed aberdeen angus" />
 	</div>
 
 	<div class="body">

@@ -1,13 +1,12 @@
 <script context="module" lang="ts">
-	import { breeds } from '$lib/breeds';
+	import { breeds, convertBreedKey } from '$lib/breeds';
 	import type { Breed } from '$lib/types';
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
 	export const load = ({ page }) => {
 		const id = page.params.breed;
-		const breedData: Breed = breeds.find((val) => (val.name = id));
-
+		const breedData: Breed = breeds.find((val) => val.name == unparseBreedName(id));
 		return {
 			props: {
 				id,
@@ -19,46 +18,45 @@
 
 <script lang="ts">
 	import Button from '$lib/global/Button.svelte';
+	import Navbar from '$lib/navbar/Navbar.svelte';
+	import type { BreedStats } from '$lib/types';
+	import { unparseBreedName } from '$lib/utils/stringUtils';
 
 	export let id;
 	export let breedData: Breed;
 
+	const getBreedStatsEntries = (data: Breed) => {
+		return Object.entries(data.stats) as [keyof BreedStats, string][];
+	};
+
 	const benfits = breedData.benefits.join(', ');
 </script>
 
-<div>a</div>
 <!-- <div class="container"> -->
-
+<Navbar />
 <div class="wrap container">
 	<div class="images">
-		<img class="images__third" src="/images/hero_cow.jpg" alt="Third" />
-		<img src="/images/breeds/limousine-2.png" alt="First" />
-		<img class="images__third" src="/images/cow_headshot.png" alt="Third" />
-		<img class="images__second" src="/images/cow_side.jpg" alt="Second" />
+		<img class="images__thumbnail" src={breedData.thumbnail} alt="Cow in field" />
+		{#if breedData.images}
+			{#each breedData.images as breedImage}
+				<img src={breedImage} alt="First" />
+			{/each}
+		{/if}
 	</div>
 
 	<div class="data">
 		<h2>{id}</h2>
 		<h4>Great for {benfits}</h4>
 		<p>
-			Each kind of Fayrouz’ cattles provides fine beef and dairy products. Our superior genetic
-			standards assure the same quality through all of the future
+			{breedData.desc}
 		</p>
 		<div class="data-overflow">
-			<div class="data-point">
-				<span>Avg Weight.</span>
-				<span>200kg</span>
-			</div>
-
-			<div class="data-point">
-				<span>Avg Weight.</span>
-				<span>200kg</span>
-			</div>
-
-			<div class="data-point">
-				<span>Avg Weight.</span>
-				<span>200kg</span>
-			</div>
+			{#each getBreedStatsEntries(breedData) as [k, v]}
+				<div class="data-point">
+					<span class="data__key">{convertBreedKey(k)}</span>
+					<span class="data__value">{v}</span>
+				</div>
+			{/each}
 		</div>
 
 		<Button mgTop="2.4em" href="/contact">Get in touch</Button>
@@ -78,12 +76,14 @@
 	img {
 		width: 100%;
 		height: 100%;
-		object-fit: cover;
 	}
 	.data {
 		display: flex;
 		flex-direction: column;
 		gap: 1.2em;
+	}
+	.data__key {
+		text-transform: capitalize;
 	}
 	.data-overflow {
 		overflow-y: auto;
@@ -105,7 +105,8 @@
 	}
 	.images img:first-child {
 		grid-column: 1/-1;
-		/* border: 2px solid gold; */
+		object-fit: cover;
+		object-position: 70%;
 	}
 	h2 {
 		font-weight: var(--fw-md);
@@ -124,6 +125,7 @@
 	/* .images__main {
 		grid-column: 1/-1;
 	} */
+
 
 	@media only screen and (max-width: 750px) {
 		.wrap {
