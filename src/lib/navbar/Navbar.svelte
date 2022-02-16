@@ -9,7 +9,9 @@
 
 <!-- <div class="container"> -->
 <div class="navbar" class:relative>
-	<img class="logo" src="/images/logo.png" alt="Logo of red bull" />
+	<a href="/">
+		<img class="logo" src="/images/logo.png" alt="Logo of red bull" />
+	</a>
 
 	<div class="items">
 		<NavLink href="/">{$t('nav.home')}</NavLink>
