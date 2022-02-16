@@ -5,7 +5,7 @@
 	export let icon = false;
 	export let type: ButtonType = 'button';
 	export let mgTop = 'unset';
-	export let active = true;
+	export let active: boolean = true;
 </script>
 
 {#if href === '/'}

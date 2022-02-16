@@ -36,7 +36,7 @@
 
 <!-- <div class="container"> -->
 <Navbar />
-<div class="wrap container">
+<div class="wrap container spaced--lg">
 	<div class="images">
 		<img class="images__thumbnail" src={breedData.thumbnail} alt="Cow in field" />
 		{#if breedData.images}
@@ -71,8 +71,8 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		gap: 5rem;
-		margin-top: 10em;
-		margin-bottom: 10em;
+		/* margin-top: 10em; */
+		/* margin-bottom: 10em; */
 		height: min-content;
 	}
 	img {

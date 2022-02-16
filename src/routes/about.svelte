@@ -35,6 +35,7 @@
 				>Our mission</Button
 			>
 		</div>
+		
 	</div>
 </section>
 
@@ -73,6 +74,11 @@ by people all around the world."
 		.grid {
 			flex-direction: column-reverse;
 			align-items: center;
+			gap: var(--pd-xs);
+
+		}
+		.selector {
+			margin-bottom: 2rem;
 		}
 		.selector {
 			text-align: center;

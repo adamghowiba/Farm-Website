@@ -1,8 +1,6 @@
 <script lang="ts">
 	import { mobileNavOpen } from '$lib/stores';
 
-	import { createEventDispatcher } from 'svelte';
-
 	export let relative: boolean;
 
 	const handleNavbarOpen = () => {

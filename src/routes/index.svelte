@@ -17,7 +17,7 @@
 	$: dict.set(translations);
 </script>
 
-<Navbar relative={false} />
+<Navbar relative={true} />
 
 <Hero />
 <About />

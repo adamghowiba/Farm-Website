@@ -67,7 +67,7 @@
 	}
 	.wave {
 		height: 100%;
-		transform: translate(-2px, 2px);
+		transform: translate(-2px, 0px);
 	}
 	.blank-filler {
 		background-color: var(--color-gray);

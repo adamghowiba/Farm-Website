@@ -132,6 +132,15 @@ p {
 		padding-left: 30px;
 		padding-right: 30px;
 	}
+
+	.spaced {
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+	}
+	.spaced--lg {
+		margin-top: 4rem;
+		margin-bottom: 4rem;
+	}
 }
 
 /* Tablet */
@@ -162,5 +171,13 @@ p {
 	}
 	h2 {
 		font-size: 30px;
+	}
+	.spaced {
+		padding-top: 4rem;
+		padding-bottom: 4rem;
+	}
+	.spaced--lg {
+		margin-top: 3rem;
+		margin-bottom: 3rem;
 	}
 }

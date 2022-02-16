@@ -95,6 +95,10 @@
 		.hamburger {
 			margin-left: auto;
 		}
+		.logo {
+			max-width: 80%;
+			padding: 5px;
+		}
 	}
 
 	/* Small Laptop */
