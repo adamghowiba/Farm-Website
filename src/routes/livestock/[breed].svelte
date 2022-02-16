@@ -1,11 +1,13 @@
 <script context="module" lang="ts">
 	import { breeds, convertBreedKey } from '$lib/breeds';
 	import type { Breed } from '$lib/types';
+	import type { Load } from '@sveltejs/kit';
+	
 	/**
 	 * @type {import('@sveltejs/kit').Load}
 	 */
-	export const load = ({ page }) => {
-		const id = page.params.breed;
+	export const load: Load = ({ url, params }) => {
+		const id = params.breed;
 		const breedData: Breed = breeds.find((val) => val.name == unparseBreedName(id));
 		return {
 			props: {
@@ -125,7 +127,6 @@
 	/* .images__main {
 		grid-column: 1/-1;
 	} */
-
 
 	@media only screen and (max-width: 750px) {
 		.wrap {
