@@ -79,13 +79,14 @@ import { fly, slide } from 'svelte/transition';
 	.main-img {
 		width: 75%;
 		right: 0rem;
-		z-index: 10;
+		z-index: 0;
 	}
 	.second-img {
 		height: 80%;
 		top: 50%;
 		left: -1rem;
 		transform: translateY(-50%);
+		z-index: -1;
 	}
 	.buttons {
 		margin-top: 2rem;
