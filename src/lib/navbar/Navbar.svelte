@@ -114,6 +114,9 @@
 			max-width: 80%;
 			padding: 5px;
 		}
+		.filler {
+			height: 83px;
+		}
 	}
 
 	/* Small Laptop */
