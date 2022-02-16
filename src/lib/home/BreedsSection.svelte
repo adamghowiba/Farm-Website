@@ -12,22 +12,16 @@
 	</div>
 
 	<div class="wrap">
-		<!-- <div class="cards"> -->
 		{#each breeds as breed}
-			<ImageCard name={breed.name} desc={breed.desc} />
-			<ImageCard name={breed.name} desc={breed.desc} />
-			<ImageCard name={breed.name} desc={breed.desc} />
+			<ImageCard name={breed.name} desc={breed.desc} src={breed.thumbnail} />
 		{/each}
-		<!-- </div> -->
 	</div>
 </div>
 
 <style>
 	.wrap {
 		display: grid;
-		/* grid-template-columns: 1fr 1fr 1fr; */
 		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-		/* grid-template-rows: repeat(3, 1fr); */
 		grid-auto-rows: 1fr;
 		justify-items: right;
 		column-gap: 1.5rem;

@@ -1,19 +1,22 @@
 <script>
+	import { breeds } from '$lib/breeds';
+
 	import FooterCta from '$lib/global/FooterCTA.svelte';
 	import PageHeader from '$lib/global/PageHeader.svelte';
 	import ImageCard from '$lib/ImageCard.svelte';
 	import Navbar from '$lib/navbar/Navbar.svelte';
+	import Breed from './[breed].svelte';
 
 	const scrollToTop = () => {
 		window.scrollTo({ top: 0, behavior: 'smooth' });
 	};
 </script>
 
-<Navbar  />
+<Navbar />
 <PageHeader --src="url(/images/white-cow.jpg)" --blue="green" />
 <div class="container spaced">
 	<div class="page-desc">
-		<h2>10+ different types of bulls</h2>
+		<h2>6+ different types of bulls</h2>
 
 		<p>
 			For over 2 decades Fayrouz Farms has provided quality raised cattle breeds for profitable
@@ -23,11 +26,8 @@
 		</p>
 	</div>
 	<div class="cards spaced">
-		{#each Array(10) as _}
-			<ImageCard
-				name="Arbideen Heifer"
-				desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ratione eum doloribus eos cumque aut nemo, reiciendis commodi repudiandae obcaecati!"
-			/>
+		{#each breeds as breed}
+			<ImageCard name={breed.name} desc={breed.desc} src={breed.thumbnail} />
 		{/each}
 	</div>
 

@@ -6,7 +6,6 @@
 	import { fade, fly } from 'svelte/transition';
 	import NavLink from './NavLink.svelte';
 
-
 	function clickNavbar() {
 		$mobileNavOpen = false;
 	}

@@ -3,14 +3,10 @@
 
 	import { createEventDispatcher } from 'svelte';
 
-	// const dispatch = createEventDispatcher();
-	// export let open;
-	export let relative;
+	export let relative: boolean;
 
 	const handleNavbarOpen = () => {
 		$mobileNavOpen = !$mobileNavOpen;
-		// open = !open && true;
-		// dispatch('openNavbar', true);
 	};
 </script>
 
@@ -74,11 +70,11 @@
 	}
 	svg path {
 		fill: none;
-		stroke: white;
+		stroke: var(--color-black);
 		stroke-width: 2px;
 	}
-	.relative svg path {
-		stroke: var(--color-black);
+	.active path   {
+		stroke: white !important;
 	}
 
 	@media screen and (max-width: 1000px) {

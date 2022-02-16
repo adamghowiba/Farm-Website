@@ -34,25 +34,9 @@
 			<Button active={selected == 'mission'} on:click={() => handleSelected('mission')}
 				>Our mission</Button
 			>
-			<Button active={selected == 'team'} on:click={() => handleSelected('team')}
-				>Meet the team</Button
-			>
 		</div>
 	</div>
 </section>
-
-<!-- <div class="container grid spaced--lg">
-	<img src="/images/cow_eating.png" alt="" />
-	<div class="heading">
-		<div class="subtitle">Our mission</div>
-		<h2>A commitment to service and quality standards that is truly world class.</h2>
-		<p>
-			Our focus is on meeting our customers’ requirements and expectations by working closely with
-			our suppliers in order to ensure the availability of an extensive range and choice of quality
-			meats products
-		</p>
-	</div>
-</div> -->
 
 <Cta
 	title="See our process"
@@ -88,7 +72,7 @@ by people all around the world."
 	@media only screen and (max-width: 1000px) {
 		.grid {
 			flex-direction: column-reverse;
-			align-items: center
+			align-items: center;
 		}
 		.selector {
 			text-align: center;

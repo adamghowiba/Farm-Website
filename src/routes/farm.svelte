@@ -9,7 +9,7 @@
 <Navbar />
 <PageHeader --src="url(/images/cow_eating.png)" />
 <section>
-	<div class="container grid spaced">
+	<div class="container grid spaced--lg">
 		<div class="heading">
 			<div class="subtitle">Our mission</div>
 			<h2>A commitment to service and quality standards that is truly world class.</h2>
@@ -42,12 +42,10 @@
 	.grid {
 		display: grid;
 		grid-template-columns: 50% 50%;
-		padding: 12rem 0;
 	}
 	section {
 		position: relative;
-		overflow-y: hidden;
-		overflow-x: hidden;
+		overflow: hidden;
 	}
 	.images {
 		text-align: center;
@@ -63,7 +61,40 @@
 		position: absolute;
 		right: 0;
 		transform: translateX(30%);
-		top: 0;
+		bottom: -20%;
 		z-index: 0;
+		max-width: 700px;
+	}
+
+	@media screen and (max-width: 1000px) {
+		.bull-sketch {
+			top: unset;
+			bottom: -60px;
+			transform: translateX(50%);
+		}
+
+	}
+	@media screen and (max-width: 750px) {
+		.grid {
+			grid-template-columns: 1fr 100px;
+		}
+		.bull-sketch {
+			max-width: 70%;
+			transform: translateX(60%);
+			opacity: 0.3;
+		}
+
+	}
+	@media screen and (max-width: 550px) {
+		.grid {
+			grid-template-columns: 1fr;
+		}
+		.bull-sketch {
+			max-width: 70%;
+			top: unset;
+			transform: translateX(60%);
+			opacity: 0.3;
+		}
+
 	}
 </style>

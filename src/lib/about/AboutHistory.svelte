@@ -5,7 +5,7 @@
 {#if selected == 'history'}
 	<div class="wrap">
 		<p>
-			<span>O</span>ur focus is on meeting our customers equirements and expectations by working
+			<span>O</span>ur focus is on meeting our customers requirements and expectations by working
 			closely with our suppliers in order to ensure the availability of an extensive range and
 			choice of quality meats products
 		</p>
