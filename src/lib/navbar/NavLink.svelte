@@ -4,7 +4,7 @@
 
 	export let href = '/';
 	export let large = false;
-	$: isActive = $page.path === href.toLowerCase();
+	$: isActive = $page.url.pathname === href.toLowerCase();
 
 	function checkNavbarOpen() {
 		if ($mobileNavOpen) {

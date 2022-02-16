@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/stores';
 
-	export let title = $page.path.replace('/', '');
-	export let crumbs = 'home' + $page.path.replace('/', ' > ');
+	export let title = $page.url.pathname.replace('/', '');
+	export let crumbs = 'home' + $page.url.pathname.replace('/', ' > ');
 </script>
 
 <div class="wrapper">

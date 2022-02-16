@@ -13,7 +13,7 @@
 </script>
 
 <Navbar />
-<PageHeader --src="url(/images/white-cow.jpg)" --blue="green" />
+<PageHeader --src="url(/images/cow_headshot.png)" --blue="green" />
 <div class="container spaced">
 	<div class="page-desc">
 		<h2>6+ different types of bulls</h2>
