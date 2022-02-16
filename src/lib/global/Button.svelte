@@ -2,7 +2,7 @@
 	type ButtonType = 'button' | 'submit';
 
 	export let href = '/';
-	export let icon = false;
+	export let icon: boolean = false;
 	export let type: ButtonType = 'button';
 	export let mgTop = 'unset';
 	export let active: boolean = true;
@@ -38,12 +38,15 @@
 		padding: 18px 40px;
 		min-width: 228px;
 
-		transition: opacity 0.25s linear;
+		transition: opacity 0.25s linear, background-color 0.15s linear;
 	}
 	button {
 		appearance: none;
 		border: none;
 		outline: none;
+	}
+	button:hover, a:hover {
+		background-color: rgb(243, 38, 65);
 	}
 	img {
 		margin-left: 20px;

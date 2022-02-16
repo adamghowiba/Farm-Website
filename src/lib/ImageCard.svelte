@@ -8,7 +8,7 @@
 	let urlSafeName = parseBreedName(name);
 </script>
 
-<div class="card">
+<a href="/livestock/{urlSafeName}" class="card">
 	<div class="head">
 		<img {src} alt="Cattle breed aberdeen angus" />
 	</div>
@@ -21,10 +21,11 @@
 
 		<a href="/livestock/{urlSafeName}">Learn More</a>
 	</div>
-</div>
+</a>
 
 <style>
 	.card {
+		display: block;
 		background-color: white;
 		width: fit-content;
 		overflow: hidden;

@@ -66,12 +66,12 @@
 		z-index: 1;
 	}
 	.wave {
-		height: 100%;
+		height: 101%;
 		transform: translate(-2px, 0px);
 	}
 	.blank-filler {
 		background-color: var(--color-gray);
-		height: 100%;
+		height: 101%;
 		width: 100%;
 		min-width: 200px;
 	}

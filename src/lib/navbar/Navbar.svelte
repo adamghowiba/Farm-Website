@@ -8,31 +8,34 @@
 </script>
 
 <!-- <div class="container"> -->
-<div class="navbar" class:relative>
-	<a href="/">
-		<img class="logo" src="/images/logo.png" alt="Logo of red bull" />
-	</a>
+<div class="filler" />
+<div class="wrapper">
+	<div class="navbar" class:relative>
+		<a href="/">
+			<img class="logo" src="/images/logo.png" alt="Logo of red bull" />
+		</a>
 
-	<div class="items">
-		<NavLink href="/">{$t('nav.home')}</NavLink>
-		<NavLink href="/about">{$t('nav.about')}</NavLink>
-		<NavLink href="/farm">{$t('nav.farms')}</NavLink>
-		<NavLink href="/livestock">{$t('nav.livestock')}</NavLink>
-		<NavLink href="/contact">{$t('nav.contact')}</NavLink>
-	</div>
-	<div class:hide={$mobileNavOpen} class="contact-info">
-		<div class="email">
-			<img src="/icons/email--red.svg" alt="Red email icon" />
-			{$t('contact.email')}
+		<div class="items">
+			<NavLink href="/">{$t('nav.home')}</NavLink>
+			<NavLink href="/about">{$t('nav.about')}</NavLink>
+			<NavLink href="/farm">{$t('nav.farms')}</NavLink>
+			<NavLink href="/livestock">{$t('nav.livestock')}</NavLink>
+			<NavLink href="/contact">{$t('nav.contact')}</NavLink>
 		</div>
-		<div class="phone">
-			<img src="/icons/phone--red.svg" alt="Red email icon" />
-			{$t('contact.phone')}
+		<div class:hide={$mobileNavOpen} class="contact-info">
+			<a href="mailto:ali@fayroz.com" class="email">
+				<img src="/icons/email--red.svg" alt="Red email icon" />
+				{$t('contact.email')}
+			</a>
+			<a href="tel:4079246902" class="phone">
+				<img src="/icons/phone--red.svg" alt="Red email icon" />
+				{$t('contact.phone')}
+			</a>
 		</div>
-	</div>
 
-	<div class="hamburger">
-		<Hamburger {relative} />
+		<div class="hamburger">
+			<Hamburger {relative} />
+		</div>
 	</div>
 </div>
 
@@ -40,7 +43,7 @@
 <style>
 	.navbar {
 		display: flex;
-		position: absolute;
+		/* position: fixed; */
 		max-width: 1140px;
 		margin: 0 auto;
 		align-items: center;
@@ -48,8 +51,20 @@
 		left: 0;
 		z-index: 1000;
 	}
+	.filler {
+		height: 90px;
+	}
+	.wrapper {
+		width: 100%;
+		background-color: var(--color-gray);
+		position: fixed;
+		top: 0;
+		z-index: 1000;
+		box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	}
 	.relative {
-		position: relative;
+		right: 0;
+		/* position: fixed; */
 	}
 	.items {
 		display: flex;

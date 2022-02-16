@@ -22,5 +22,10 @@
         appearance: none;
         border: none;
         outline: none;
+
+		transition: background-color 0.15s linear;
+	}
+	button:hover {
+		background-color: rgb(243, 38, 65);
 	}
 </style>

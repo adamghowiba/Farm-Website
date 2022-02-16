@@ -3,7 +3,7 @@
 	import { mobileNavOpen } from '$lib/stores';
 
 	export let href = '/';
-	export let large = false;
+	export let large: boolean = false;
 	$: isActive = $page.url.pathname === href.toLowerCase();
 
 	function checkNavbarOpen() {

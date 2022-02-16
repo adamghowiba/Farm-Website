@@ -51,7 +51,7 @@
 
 <style>
 	.nav {
-		position: absolute;
+		position: fixed;
 		display: hidden;
 		width: 100%;
 		height: 0px;

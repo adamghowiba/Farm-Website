@@ -35,7 +35,8 @@
 	}
 	.headings {
 		position: sticky;
-		top: var(--pd-sm);
+		/* top: var(--pd-xl); */
+		top: 110px;
 		display: flex;
 		flex-direction: column;
 		gap: var(--pd-xs);
@@ -64,6 +65,7 @@
 			position: relative;
 			max-width: 70ch;
 			margin-bottom: var(--pd-lg);
+			top: 0;
 		}
 	}
 </style>
